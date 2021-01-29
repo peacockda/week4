@@ -25,13 +25,13 @@ async function pageLoaded() {
   
   // Grab array of interest from the JSON object
   let products = json.products
-  
+  let productsElement = document.querySelector('.products')
+
   // This finds the 'products' class in the HTML and inserts
   // properly formatted HTML with classes to render the argued product
   function renderProduct(productData) {
-    let outputElement = document.querySelector('.products')
     // Can this be simplified?
-    outputElement.insertAdjacentHTML('beforeend', `
+    productsElement.insertAdjacentHTML('beforeend', `
     <div class="p-4 w-full md:w-1/2 lg:w-1/3">
       <div class="border h-full p-4 flex flex-col">
         <h2 class="text-lg font-bold mb-4">${productData.name}</h2>
